@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío Web: Fibonacci y Números Primos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <div class="snow-container" id="snowContainer"></div>
+
+    <header>
+        <h1 id="titulo-proyecto">Matemáticas Aplicadas al Mundo Real</h1>
+        <p id="autor-proyecto">Desarrollado por: Mayerlind Lindsey Layme Cuellar</p>
+    </header>
+
+    <main class="contenedor">
+        
+        <section class="tarjeta" id="contexto">
+            <h2>Contexto del Problema Real</h2>
+            <p><strong>Fibonacci en Ahorros:</strong> Permite simular una proyección financiera donde el dinero guardado aumenta dinámicamente según la secuencia de crecimiento de la naturaleza.</p>
+            <p style="margin-top: 12px;"><strong>Primos en Seguridad:</strong> Se aplican en informática para validar si códigos de acceso numéricos son herméticos y difíciles de vulnerar ante ataques externos.</p>
+        </section>
+
+        <section class="tarjeta" id="algoritmo">
+            <h2>Explicación de los Algoritmos</h2>
+            <p><strong>Fibonacci:</strong> Genera valores sumando los dos números inmediatamente anteriores mediante un ciclo estructurado sin usar vectores (0, 1, 1, 2, 3, 5...).</p>
+            <p style="margin-top: 12px;"><strong>Números Primos:</strong> Utiliza un bucle que divide el número ingresado entre todos los valores menores o iguales a él. Si el residuo es cero exactamente dos veces (entre 1 y sí mismo), se confirma como primo.</p>
+        </section>
+
+        <section class="tarjeta" id="interaccion-fibonacci">
+            <h2>1. Simulador de Ahorro (Fibonacci)</h2>
+            <form id="formulario-ahorro" onsubmit="event.preventDefault(); simularAhorro();">
+                <div class="grupo-input">
+                    <label for="meses">Ingresar cantidad de meses a simular:</label>
+                    <input type="number" id="meses" min="1" max="30" placeholder="Ejemplo: 6" required>
+                </div>
+                <button type="submit" id="btn-calcular-fibo">Calcular Ahorro</button>
+            </form>
+            <div id="resultado-fibo" class="caja-resultado">Esperando datos de meses...</div>
+        </section>
+
+        <section class="tarjeta" id="interaccion-primos">
+            <h2>2. Validador de Accesos (Números Primos)</h2>
+            <form id="formulario-seguridad" onsubmit="event.preventDefault(); verificarCodigo();">
+                <div class="grupo-input">
+                    <label for="numero">Ingresar código numérico a verificar:</label>
+                    <input type="number" id="numero" min="1" placeholder="Ejemplo: 17" required>
+                </div>
+                <button type="submit" id="btn-calcular-primo">Validar Código de Seguridad</button>
+            </form>
+            <div id="resultado-primo" class="caja-resultado">Esperando código para analizar...</div>
+        </section>
+
+        <section class="tarjeta" id="conclusion">
+            <h2>Conclusión</h2>
+            <p>La automatización de modelos matemáticos mediante JavaScript permite resolver retos prácticos del día a día, desde la planificación financiera personal hasta el filtrado lógico de seguridad en redes digitales dentro del ecosistema informático actual.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="enlaces-proyecto">
+            <a href="https://github.com" id="link-repo" target="_blank">Repositorio Git</a>
+            <a href="#" id="link-web" target="_blank">Página Publicada</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

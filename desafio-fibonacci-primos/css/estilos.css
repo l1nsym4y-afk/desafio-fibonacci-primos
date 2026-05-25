@@ -1,0 +1,278 @@
+/* Reset Estructural */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000; /* Fondo Negro Puro */
+    color: #f5f5f5;
+    font-family: 'Comfortaa', sans-serif;
+    padding: 40px 15px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* --- CAPA ESTÉTICA DE PARTÍCULAS (NIEVE DE FONDO) --- */
+.snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.snowflake {
+    position: absolute;
+    top: -20px;
+    color: rgba(255, 255, 255, 0.45);
+    user-select: none;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(105vh) rotate(360deg);
+        opacity: 0.1;
+    }
+}
+
+/* --- SECCIONES PRINCIPALES --- */
+header {
+    text-align: center;
+    margin-bottom: 35px;
+    z-index: 1;
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    color: #ffb3ff; /* Rosa Pastel Neón */
+    font-size: 2.2rem;
+    text-shadow: 0 0 10px #ffb3ff, 0 0 20px #ff66cc;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+#autor-proyecto {
+    color: #d1b3ff; /* Morado Pastel Neón */
+    font-size: 1.05rem;
+    font-weight: bold;
+    text-shadow: 0 0 8px #d1b3ff;
+    letter-spacing: 0.5px;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    z-index: 1;
+}
+
+/* Tarjetas con Relieve Neon Pastel */
+.tarjeta {
+    background: #0d0d0d;
+    border: 2px solid #b3ffff; /* Celeste Pastel Neón */
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 0 20px rgba(179, 255, 255, 0.35), inset 0 0 12px rgba(179, 255, 255, 0.15);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-3px);
+    border-color: #ffb3ff;
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    color: #b3ffff;
+    font-size: 1.35rem;
+    text-shadow: 0 0 6px #b3ffff;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(179, 255, 255, 0.25);
+    padding-bottom: 6px;
+}
+
+p {
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+p strong {
+    color: #b3ffff;
+}
+
+/* --- COMPONENTES INTERACTIVOS (FORMULARIOS) --- */
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+label {
+    color: #ffffcc; /* Amarillo Pastel Neón */
+    text-shadow: 0 0 6px #ffffcc;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+input[type="number"] {
+    background: #000000;
+    border: 2px solid #ffffcc;
+    border-radius: 10px;
+    padding: 12px;
+    color: #ffffff;
+    font-family: 'Comfortaa', sans-serif;
+    box-shadow: inset 0 0 8px rgba(255, 255, 204, 0.4);
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #b3ffff;
+    box-shadow: 0 0 10px rgba(179, 255, 255, 0.5), inset 0 0 5px rgba(179, 255, 255, 0.2);
+}
+
+button {
+    width: 100%;
+    background: transparent;
+    border: 2px solid #b3ffb3; /* Verde Pastel Neón */
+    color: #b3ffb3;
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-shadow: 0 0 6px #b3ffb3;
+    box-shadow: 0 0 12px rgba(179, 255, 179, 0.25);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    background: #b3ffb3;
+    color: #000000;
+    box-shadow: 0 0 22px #b3ffb3;
+    transform: scale(1.01);
+}
+
+/* Cajas de salida de datos (Resultados) */
+.caja-resultado {
+    background: #000000;
+    margin-top: 18px;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px dashed #ffb3ff;
+    font-size: 0.95rem;
+    color: #e0e0e0;
+    overflow-x: auto;
+}
+
+/* --- TABLAS --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 5px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.9rem;
+}
+
+th {
+    font-family: 'Cinzel', serif;
+    color: #ffb3ff;
+    text-shadow: 0 0 4px #ffb3ff;
+}
+
+.total-fila {
+    color: #ffffcc;
+    font-weight: bold;
+    border-top: 2px solid #ffffcc;
+}
+
+.total-fila td {
+    border-bottom: none;
+    text-shadow: 0 0 4px #ffffcc;
+}
+
+/* --- ALERTAS DE VALIDACIÓN --- */
+.alerta-segura {
+    color: #b3ffb3;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(179, 255, 179, 0.6);
+    display: block;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.alerta-insegura {
+    color: #ffb3ff;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(255, 179, 255, 0.6);
+    display: block;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* --- PIE DE PÁGINA --- */
+footer {
+    margin-top: 50px;
+    text-align: center;
+    z-index: 1;
+}
+
+.enlaces-proyecto a {
+    color: #d1b3ff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    text-shadow: 0 0 6px #d1b3ff;
+    font-size: 0.95rem;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.enlaces-proyecto a:hover {
+    color: #b3ffff;
+    text-shadow: 0 0 10px #b3ffff;
+}
+
+/* --- ADAPTABILIDAD RESPONSIVA --- */
+@media (max-width: 600px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    h1 {
+        font-size: 1.65rem;
+    }
+
+    .tarjeta {
+        padding: 16px;
+    }
+
+    th, td {
+        padding: 6px;
+        font-size: 0.8rem;
+    }
+}
